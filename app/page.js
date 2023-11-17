@@ -1,6 +1,5 @@
 import InternshipCategory from "@/components/internshipCategory/page";
-import Image from "next/image";
-import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
 const InternshipCategoryData = [
   {
     link: "/kategori/it",
@@ -21,7 +20,8 @@ const InternshipCategoryData = [
     image: "/bg.jpg",
   },
 ];
-export default function Home() {
+export default async function Home() {
+
   return (
     <main className="h-screen relative">
       <div
@@ -42,6 +42,8 @@ export default function Home() {
 
       <section className="h-full flex flex-col items-center justify-center">
         <div className="max-w-2xl">
+      <div>       <UserButton afterSignOutUrl="/" /></div>
+
           <h1 className="text-6xl font-bold">PraktikPlats.se</h1>
           <p className="text-xl">
             Hjälper elever, studenter, utbildningsanordnare och arbetsgivare att
